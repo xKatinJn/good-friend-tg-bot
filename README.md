@@ -1,5 +1,9 @@
 # good-friend-tg-bot
 
-.env in root directory must contain:
+run app by:
+`docker-compose up`
 
-TG_BOT_TOKEN: token of your tg bot
+.env in **tg** directory must contain:
+
+`TG_BOT_TOKEN: <token of your tg bot>
+`

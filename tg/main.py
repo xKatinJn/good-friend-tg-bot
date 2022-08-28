@@ -8,13 +8,13 @@ from dotenv import load_dotenv
 from polls import start_handler
 
 
-load_dotenv("../.env")
+load_dotenv(".env")
 
-BOT_TOKEN = os.environ.get("TG_BOT_TOKEN")
+TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN")
 
 logging.basicConfig(level=logging.DEBUG)
 
-bot = Bot(token=BOT_TOKEN)
+bot = Bot(token=TG_BOT_TOKEN)
 dispatcher = Dispatcher(bot=bot)
 
 

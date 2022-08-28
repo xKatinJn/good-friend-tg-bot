@@ -9,5 +9,4 @@ def log(func):
         log_msg = f'User: {event.from_user} Msg: "{event.text}"'
         logger.info(log_msg)
         return func(*args)
-
     return wrapper
