@@ -1,7 +1,8 @@
 # good-friend-tg-bot
 
 run app by:
-`docker-compose up`
+
+`./dc.sh run -d`
 
 .env in **tg** directory must contain:
 
