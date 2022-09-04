@@ -4,13 +4,37 @@ services:
   tg:
     container_name: tg_bot
     build: tg/
-    restart: always
+    restart: on-failure
     ports:
       - "8081:8081"
+    environment:
+      WEB_ADDRESS: "http://web:8000"
 
   web:
     container_name: web
     build: web/
-    restart: always
+    restart: on-failure
     ports:
       - "8000:8000"
+    environment:
+      WEB: "True"
+      CELERY_BROKER_URL: "redis://redis:6379/0"
+      CELERY_BACKEND_URL: "redis://redis:6379/1"
+
+  celery:
+    container_name: celery
+    build: web/
+    depends_on:
+      - web
+    environment:
+      CELERY_BROKER_URL: "redis://redis:6379/0"
+      CELERY_BACKEND_URL: "redis://redis:6379/1"
+
+  redis:
+    container_name: redis
+    build: volumes/redis/
+    depends_on:
+      - web
+      - celery
+    ports:
+      - "6379:6379"

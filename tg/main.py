@@ -5,7 +5,7 @@ import logging
 from aiogram import Bot, Dispatcher
 from dotenv import load_dotenv
 
-from polls import start_handler
+from polls import start_handler, test_celery
 
 
 load_dotenv(".env")
@@ -23,6 +23,9 @@ async def main():
     try:
         dispatcher.register_message_handler(
             start_handler, commands={"start", "restart"}
+        )
+        dispatcher.register_message_handler(
+            test_celery, commands={"test", "test_celery"}
         )
         await dispatcher.start_polling()
     finally:

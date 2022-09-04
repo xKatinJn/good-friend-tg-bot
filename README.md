@@ -6,5 +6,5 @@ run app by:
 
 .env in **tg** directory must contain:
 
-`TG_BOT_TOKEN: <token of your tg bot>
+`TG_BOT_TOKEN: <str: token of your tg bot>
 `
