@@ -13,7 +13,7 @@ def read_root():
 
 @app.get("/list_of_celery_tasks")
 def list_of_celery_tasks():
-    return {'result': celery_app.tasks}
+    return {'result': str(celery_app.tasks)}
 
 
 @app.get("/test_celery")
