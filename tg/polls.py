@@ -8,6 +8,7 @@ from utils import log
 
 WEB = os.environ.get("WEB_ADDRESS")
 
+
 @log
 async def start_handler(event: types.Message):
     await event.answer(
