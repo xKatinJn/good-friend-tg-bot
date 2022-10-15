@@ -1,4 +1,4 @@
-# good-friend-tg-bot
+# just-friends-app
 
 run app by:
 
