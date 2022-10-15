@@ -1,7 +1,7 @@
 import os
 
 from celery import Celery
-from tasks import HelloCeleryTask
+from web.profile.tasks import HelloCeleryTask
 
 
 app = Celery(
